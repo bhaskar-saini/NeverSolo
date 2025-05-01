@@ -6,7 +6,8 @@ const baseURL =
     : 'https://neversolo.onrender.com/api';
 
   const api = axios.create({
-    baseURL
+    baseURL,
+    withCredentials: true
   });
 
 export default api;

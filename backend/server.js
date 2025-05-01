@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
-console.log('Current NODE_ENV:', process.env.NODE_ENV);
 
 dotenv.config();
 
@@ -13,7 +12,7 @@ const server = http.createServer(app);
 
 const originURL =
   process.env.NODE_ENV === 'development'
-    ? '*'
+    ? 'http://localhost:5173'
     : 'https://neversolo.vercel.app';
 
 const io = new Server(server, {
