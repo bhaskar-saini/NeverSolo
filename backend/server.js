@@ -4,21 +4,28 @@ const dotenv = require('dotenv');
 const http = require('http');
 const cors = require('cors');
 const { Server } = require('socket.io');
+console.log('Current NODE_ENV:', process.env.NODE_ENV);
 
 dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
+
+const originURL =
+  process.env.NODE_ENV === 'development'
+    ? '*'
+    : 'https://neversolo.vercel.app';
+
 const io = new Server(server, {
     cors: {
-        origin: 'https://neversolo.vercel.app',
+        origin: originURL,
         methods: ['GET', 'POST'],
         credentials: true
     }
 });
 
 app.use(cors({
-    origin: 'https://neversolo.vercel.app',
+    origin: originURL,
     credentials: true
 }));
 
