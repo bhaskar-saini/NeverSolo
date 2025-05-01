@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const URL = process.env.NODE_ENV === 'development'
+const URL = import.meta.env.MODE === 'development'
   ? 'http://localhost:5000'
   : 'https://neversolo.onrender.com';
 
