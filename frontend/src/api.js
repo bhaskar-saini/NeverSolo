@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const baseURL =
-  process.env.NODE_ENV === 'development'
+  import.meta.env.MODE === 'development'
     ? 'http://localhost:5000/api'
     : 'https://neversolo.onrender.com/api';
 
