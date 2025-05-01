@@ -11,12 +11,17 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: '*',
-        methods: ['GET', 'POST']
+        origin: 'https://neversolo.vercel.app',
+        methods: ['GET', 'POST'],
+        credentials: true
     }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://neversolo.vercel.app',
+    credentials: true
+}));
+
 app.use(express.json());
 
 mongoose
