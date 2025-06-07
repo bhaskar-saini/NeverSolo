@@ -26,7 +26,7 @@ A real-time chat application built with the **MERN stack** (MongoDB, Express, Re
 
 ---
 
-## 🧪 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
